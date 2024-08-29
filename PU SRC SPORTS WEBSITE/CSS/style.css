@@ -1,0 +1,1294 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default, shown on small screens */
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  z-index: 1001; /* Ensure hamburger is above the navbar */
+}
+
+.hamburger .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  margin: 5px auto;
+  transition: 0.3s;
+}
+
+/* Active state for hamburger (turns into X) */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 10px; /* Adjust based on size and spacing */
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px; /* Adjust based on size and spacing */
+}
+
+/* Header background styles */
+/* Container for background images */
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height, adjust as needed */
+  overflow: hidden;
+}
+
+/* Style for the image */
+.background-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+/* Container for the slider */
+.background-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Slider wrapper to handle sliding */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Style each slide */
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Crossfade transition */
+}
+
+/* Show the active slide */
+.background-image.active {
+  opacity: 1;
+}
+
+/* Style for navigation arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  border-radius: 50%; /* Rounded arrow buttons */
+  transition: background 0.3s ease; /* Smooth background color transition */
+}
+
+/* Arrow hover effect */
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+}
+
+.arrow i {
+  font-size: 20px; /* Adjust icon size */
+  width: 100px;
+}
+
+/* Positioning the arrows */
+.arrow-left {
+  left: 15px; /* Adjust based on design */
+}
+
+.arrow-right {
+  right: 15px; /* Adjust based on design */
+}
+
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff;
+  position: relative;
+  z-index: 1000; /* Ensure navbar is above the background slider */
+}
+
+/* Branding styles */
+.nav-branding {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navigation menu styles */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hide menu by default on small screens */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+  }
+
+  .nav-menu.show {
+    display: flex; /* Show menu when hamburger is clicked */
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Section Layouts */
+#part1 {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background: transparent;
+}
+
+#part2 {
+  width: 5%;
+  height: 100px;
+  float: right;
+  margin-top: 30%;
+  background: transparent;
+  margin: 0;
+}
+
+#part2 img {
+  width: 25px;
+  height: 25px;
+  padding-left: 5px;
+  padding-top: 12px;
+  border-radius: 10px;
+}
+
+/* Responsive Image Adjustments */
+@media (max-width: 768px) {
+  #part2 img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+#part2 img:first-child {
+  margin-top: 440px;
+}
+
+/* Courses Section */
+.courses {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.courses .index-c {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#cou {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Newsletter Form Styling */
+.ind-new {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2vw auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.yh {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contain {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 15px;
+  width: calc(100% - 30px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+input[type="submit"] {
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  width: calc(100% - 30px);
+  background-color: #e2b500;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #006f3e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ind-new {
+    padding: 15px;
+    margin: 1vw auto;
+    max-width: 90%;
+  }
+
+  .yh {
+    font-size: 1.5em;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    font-size: 0.9em;
+  }
+
+  input[type="submit"] {
+    font-size: 1em;
+    padding: 12px;
+    background-color: #00e226;
+  }
+}
+
+/* Image & Video Section */
+.image-video-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vw; /* Increased padding for better spacing */
+  background-color: #f4f4f4;
+  border-radius: 12px; /* Rounded corners for the entire section */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  gap: 2vw; /* Uniform spacing between image and video containers */
+}
+
+.image-container,
+.video-container {
+  flex: 1;
+  overflow: hidden; /* Ensures content doesn't overflow outside the container */
+  border-radius: 12px; /* Rounded corners for both image and video */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.image-container img,
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* Same rounded corners for consistency */
+  transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+.image-container:hover,
+.video-container:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive design adjustments for tablets */
+@media (max-width: 768px) {
+  .image-video-section {
+    flex-direction: column; /* Stacks image and video vertically */
+    padding: 5vw; /* Increases padding for a better layout on smaller screens */
+    gap: 4vw; /* Adds spacing between stacked elements */
+  }
+
+  .image-container,
+  .video-container {
+    margin-right: 0; /* Removes right margin for vertical stacking */
+    border-radius: 8px; /* Slightly reduces the radius for smaller elements */
+  }
+}
+
+/* Responsive design adjustments for mobile devices */
+@media (max-width: 480px) {
+  .image-video-section {
+    padding: 5vw; /* Adds more padding for smaller screens */
+  }
+
+  .image-container img,
+  .video-container video {
+    border-radius: 8px; /* Further reduces the radius for better fitting */
+  }
+
+  .image-container,
+  .video-container {
+    flex: none; /* Removes flex properties for better stacking on small screens */
+  }
+}
+
+
+/* Styling for header-text */
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Adjust text color for contrast against the background */
+  padding: 0 20px;
+  z-index: 10;
+}
+
+/* Styling for the container holding text and form */
+.head {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Text styling */
+.emp {
+  font-size: 2.5rem; /* Adjust font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ccc {
+  font-size: 1.25rem; /* Adjust font size */
+  margin-bottom: 15px;
+}
+
+.we {
+  font-size: 1.5rem; /* Adjust font size */
+  margin-bottom: 10px;
+}
+
+.we:last-of-type {
+  font-size: 4rem; /* Larger font size for emphasis */
+  margin-bottom: 20px;
+}
+
+/* Search form styling */
+.find {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 500px;
+  font-size: 1rem;
+  outline: none;
+  width: 330px; /* Set a fixed width or adjust as needed */
+  border-radius: 200px; /* adjust the value to your desired radius */
+}
+
+.search-box {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 100px; /* Add this line to set the border radius */
+  font-size: 1rem;
+  outline: none;
+  width: 2px; /* Adjust the width as needed */
+}
+
+.find input[type="text"] {
+  border-radius: 500px; /* adjust the value to your desired radius */
+}
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #20d400;
+  border: none;
+  border-radius: 500px;
+  padding: 17px 20px;
+  cursor: pointer;
+  display: flex;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.search-box {
+  border-radius: 200px; /* adjust the value to your desired radius */
+}
+button i {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #006f3e;
+}
+
+
+/* Blog Section */
+#blog {
+  padding: 40px 20px;
+  background-color: #f3f4f6;
+  text-align: center;
+  margin: 40px auto; /* Center the blog section and add margin at the top and bottom */
+  max-width: 1200px; /* Ensure the blog section has a maximum width */
+}
+
+/* Title styling */
+.blog-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* Blog container holding all blog posts */
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Individual blog post styling */
+.blogpost {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Hover effect for blog posts */
+.blogpost:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog post image styling */
+.blogpost img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Blog post header styling */
+.blg-head {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+/* Blog post content styling */
+.blogcontent {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Read more link styling */
+.read-more {
+  font-size: 1em;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for Blog Section */
+@media (min-width: 768px) {
+  .blog-container {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-container {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+/* Footer Styling */
+#pu-src-footer-container footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+#pu-src-footer-container .pu-src-footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+#pu-src-footer-container .pu-src-footer-section {
+  flex: 1;
+  padding: 20px;
+  min-width: 250px;
+}
+
+#pu-src-footer-container .pu-src-footer-section h2 {
+  color: #ff9800;
+  margin-bottom: 15px;
+}
+
+#pu-src-footer-container .pu-src-footer-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+#pu-src-footer-container .pu-src-footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#pu-src-footer-container .pu-src-footer-section ul li {
+  margin-bottom: 10px;
+}
+
+#pu-src-footer-container .pu-src-footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#pu-src-footer-container .pu-src-footer-section ul li a:hover {
+  color: #ff9800;
+}
+
+#pu-src-footer-container .pu-src-social-icons a {
+  display: inline-block;
+  color: #fff;
+  margin: 5px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+#pu-src-footer-container .pu-src-social-icons a:hover {
+  color: #ff9800;
+}
+
+#pu-src-footer-container .pu-src-subscribe form {
+  display: flex;
+  flex-direction: column;
+}
+
+#pu-src-footer-container .pu-src-subscribe form input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+#pu-src-footer-container .pu-src-subscribe form button {
+  padding: 10px;
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pu-src-footer-container .pu-src-subscribe form button:hover {
+  background-color: #905803;
+}
+
+#pu-src-footer-container .pu-src-footer-bottom {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+}
+
+#pu-src-footer-container .pu-src-footer-bottom p {
+  margin: 0;
+  color: #ccc;
+}
+
+#pu-src-footer-container .pu-src-footer-bottom a {
+  color: #ff9800;
+  text-decoration: none;
+}
+
+#pu-src-footer-container .pu-src-footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+#pu-src-footer-container .pu-src-policy-terms {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#pu-src-footer-container .pu-src-policy-terms li {
+  margin: 0 10px;
+}
+
+#pu-src-footer-container .pu-src-policy-terms li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#pu-src-footer-container .pu-src-policy-terms li a:hover {
+  color: #ff9800;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  #pu-src-footer-container .pu-src-footer-content {
+      flex-direction: column;
+  }
+
+  #pu-src-footer-container .pu-src-footer-section {
+      text-align: center;
+      padding: 10px 20px;
+  }
+}
+
+
+/* Container for the entire events section */
+.enclose {
+  max-width: 1200px;
+  margin: 40px auto; /* Add top and bottom margin */
+  padding: 20px;
+  background-color: #32333d;
+  border-radius: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling for 'UPCOMING EVENTS' */
+.eve {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Main container holding all event options */
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Individual event card styling */
+.option {
+  flex: 1 1 calc(33.333% - 20px);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Image styling within each event card */
+.option img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Text styling within each event card */
+.option p {
+  padding: 15px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hover effect for event cards */
+.option:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styling for tablets (width less than 768px) */
+@media (max-width: 768px) {
+  .option {
+      flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* Responsive styling for mobile devices (width less than 480px) */
+@media (max-width: 480px) {
+  .option {
+      flex: 1 1 100%;
+  }
+}
+
+
+/* Container for the entire NEW ACTIVITIES section */
+#main-act {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title styling for 'NEW ACTIVITIES' */
+#main-act h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #444;
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Main container holding all activity options */
+#main-act .option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 calc(33.333% - 20px);
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Heading styling within each activity option */
+#main-act .option h4 {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Image styling within each activity option */
+#main-act .option img {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#main-act .option img:hover {
+  transform: scale(1.05);
+}
+
+/* Styling for the REGISTER NOW button */
+#main-act .option #Button1 {
+  background-color: #08c802;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  width: 200px;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover effect */
+#main-act .option #Button1:hover {
+  background-color: #015a0b;
+  transform: translateY(-2px);
+}
+
+/* Adding a cute ripple effect on button click */
+#main-act .option #Button1:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 200%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+#main-act .option #Button1:active:after {
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0s;
+}
+
+/* Hover effect for activity cards */
+#main-act .option:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive styling for tablets (width less than 768px) */
+@media (max-width: 768px) {
+  #main-act .option {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  #main-act h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Responsive styling for mobile devices (width less than 480px) */
+@media (max-width: 480px) {
+  #main-act .option {
+    flex: 1 1 100%;
+  }
+
+  #main-act h3 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+/* About Us Section */
+.abt {
+  text-align: center;
+  color: #333;
+  padding: 20px 0;
+}
+
+#main-abt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+#abt-p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Image Slider */
+#slider {
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+#slider figure {
+  display: flex;
+  animation: 20s slider infinite;
+  margin: 0;
+}
+
+#slider img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes slider {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+/* Container for the entire booking section */
+.online {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling for 'Book Online' */
+.book-head {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Form styling */
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Fieldset styling */
+.book fieldset {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Legend styling */
+.book fieldset legend {
+  font-size: 1.2rem;
+  color: #333;
+  padding: 0 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Input and textarea styling */
+.book input[type="text"],
+.book input[type="date"],
+.book input[type="tel"],
+.book input[type="range"],
+.book textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+/* Button styling */
+.book button {
+  background-color: #02be17;
+  color: #fff;
+  border: none;
+  width: 90px;
+  border-radius: 500px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+/* Style the range input (slider) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  outline: none;
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+input[type="range"]:hover {
+  opacity: 1;
+}
+
+/* Thumb (handle) styling */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00e226;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f76c6c;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button hover effect */
+.book button:hover {
+  background-color: #015d13;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .online {
+      padding: 15px;
+  }
+  
+  .book fieldset {
+      padding: 15px;
+  }
+
+  .book button {
+      font-size: 1rem;
+      padding: 8px;
+  }
+}
+
+
+/* Form Container */
+form.letter {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Heading */
+form.letter .regi h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Form Inputs */
+form.letter .regist {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form.letter .regist input[type="text1"], 
+form.letter .regist input[type="date"], 
+form.letter .regist select,
+form.letter .regist input[type="radio"],
+form.letter .regist input[type="checkbox"] {
+  width: calc(100% - 22px);
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+form.letter .regist select {
+  -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+  -moz-appearance: none; /* Remove default styling in Firefox */
+  appearance: none; /* Remove default styling in other browsers */
+}
+
+form.letter .regist input[type="radio"],
+form.letter .regist input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Labels and Additional Styling */
+form.letter label {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+form.letter .regist input[type="checkbox"] {
+  margin-left: 0;
+}
+
+/* reCAPTCHA Widget */
+.g-recaptcha {
+  margin: 20px 0;
+}
+
+/* Submit Button */
+form.letter .register input[type="submit"] {
+  background-color: #08c802;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form.letter .register input[type="submit"]:hover {
+  background-color: #06a800;
+}
+/* Styling for the REGISTER NOW link */
+.register-button {
+  display: inline-block;
+  background-color: #08c802;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: #06a800;
+  transform: translateY(-2px);
+}
+
+/* CSS styles for the Twitter feed container */
+.twitter-container {
+  display: flex;
+  width: 900%;
+  justify-content: center; /* Centers the feed horizontally */
+  align-items: center;    /* Centers the feed vertically */
+  margin: 20px auto;      /* Adds some margin around the container */
+  max-width: 800px;       /* Maximum width for the container */
+  padding: 10px;          /* Adds some padding for better spacing */
+  background-color: #f4f4f9; /* Light background color for contrast */
+  border-radius: 10px;    /* Rounded corners for the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Optional: Make the Twitter feed responsive */
+@media (max-width: 768px) {
+  .twitter-container {
+      width: 90%; /* Adjust width on smaller screens */
+  }
+
+  .twitter-timeline {
+      width: 100% !important; /* Ensure the timeline width adjusts */
+  }
+}
+
